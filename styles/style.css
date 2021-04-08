@@ -11,7 +11,6 @@ div.nav-bar {
     display: flex;
     justify-content: space-between;
     padding: 1rem 6rem;
-    width: 100vw;
     background: #304353;
     
 }
@@ -49,39 +48,58 @@ ul li a:hover {
     background: #fff;
     padding: 0.5rem;
 }
+
+.hamburger {
+    display: none;
+}
 /* Hamburger for the nav-links
 ################################################################################################################################## */
 @media(max-width: 746px) {
-    /* Its troublesome to style the nav-links list to fit the center, I leave it to your next class, Please do explain easier methods of doing this */
-    ul.nav-links {
-        flex-direction: column;
-        background-image: url('../images/icon-hamburger.svg');
-        background-repeat: no-repeat;
-        background-position-x: 100%;
-    }
-    
-
-    ul.nav-links>li {
-        visibility: hidden;
-        background-color: white;
-    }
-    ul.nav-links > li {
-        width: 100%;
-        position: relative;
-        top: 3em;
-        left: -1em;
-        right: 0;
-    }
-
-    ul.nav-links:hover>li{
-        visibility:visible;
-    }
-
-    div.nav-bar {
-        padding: 1em 2em;;
-    }
+.hamburger{
+    display: block;
+    margin-top: .2em;
 }
 
+ul.nav-links{
+    display: none;
+}
+
+div.nav-bar {
+    padding: 1rem 2rem;
+}
+
+ul.nav-links {
+    height: 27vh;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    left: 5%;
+    -index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background: #6ea4c4;
+    trasition: top 1s ease;
+    display: none;
+    border-radius: 10px;
+}
+
+ul.nav-links li a {
+    display: inline-block;
+    color: hsl(240, 1%, 26%);
+    font-size: 1.3rem;
+}
+
+ul.nav-links li a:hover {
+    background: unset;
+    color: #fff;
+}
+ul.nav-links.toggle {
+    display: flex;
+}
+
+}
 /* End of Hamburger Section ######################################################################################################## */
 
 
@@ -135,6 +153,7 @@ div.hero-content-btn a {
     div.hero-section {
         padding:2rem;
     }
+
 }
 
 div.hero-background {
@@ -453,4 +472,11 @@ div.footer h6 {
   textarea{
       width: 100%;
   }
+  div.hero-content-btn a, div.footer-btn a {
+    width: 70%;
+    padding: 15px 33px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
 }
